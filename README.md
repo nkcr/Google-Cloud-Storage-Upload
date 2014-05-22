@@ -7,7 +7,8 @@ Script to upload the result of a command to google cloud storage. Greate for dum
 Purpose
 --------
 
-This script is for google cloud storage, it uses google python client library to send the result of a command to a bucket (for example save the result of a pg_dump or whatever you want). Don't need to provide password each time, it is made to be used fully alone.
+This script is for google cloud storage, it uses google python client library to send the result of a command to a bucket (for example save the result of a pg_dump or whatever you want). Don't need to provide password each time, it is made to be used fully alone.<br>
+Note : it saes files with *text/plain;charset=utf-8*
 
 
 Prerequisite
