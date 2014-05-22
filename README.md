@@ -1,16 +1,16 @@
 Google-Cloud-Storage-Upload
 ===========================
 
-Script to upload the result of a command to google cloud storage. Used for dump backup.
+Script to upload the result of a command to google cloud storage. Greate for dump backup.
 
 
 Purpose
 --------
 
-This script is for google cloud storage, it use google python client library to send the result of a command to a bucket (for example save the result of a pg_dump or whatever you want). Don't need to provide password each time, it is made to be used fully alone.
+This script is for google cloud storage, it uses google python client library to send the result of a command to a bucket (for example save the result of a pg_dump or whatever you want). Don't need to provide password each time, it is made to be used fully alone.
 
 
-Prerequiste
+Prerequisite
 --------
 The google-api-python library must be installed. See https://github.com/google/google-api-python-client
 
@@ -22,11 +22,11 @@ You need to edit the script with your key path and your email key (see security 
 
 Security
 --------
-To access your bucket, you must provide a service account key and an email. To do so, look at your *api & auth* section of your console developer (see http://bit.ly/1tprtJc).
+To access your bucket, you must provide a service account key and an email. To do so, look at your *api & auth* section of your console developer (see http://bit.ly/1tprtJc). After that, provide the given file to the script by setting PRIVATTE_KEY_PATH.
 
 RUN
 --------
-Call the script like that : <br>
+You must provide to the script your command and your bucket. Examples : <br>
 $ python upload_command.py "ls -la" gs://bucket/object <br>
 $ python upload_command.py "pg_dump my_database" gs://bucket/object
 
