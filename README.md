@@ -1,14 +1,14 @@
 Google-Cloud-Storage-Upload
 ===========================
 
-Script to upload the result of a command to google cloud storage. Greate for dump backup.
+Script to upload the result of a command to google cloud storage. Greater for dump backup.
 
 
 Purpose
 --------
 
-This script is for google cloud storage, it uses google python client library to send the result of a command to a bucket (for example save the result of a pg_dump or whatever you want). Don't need to provide password each time, it is made to be used fully alone.<br>
-Note : it saes files with *text/plain;charset=utf-8*
+This script is for Google cloud storage, it uses Google python client library to send the result of a command to a bucket (for example save the result of a pg_dump or whatever you want). Don't need to provide password each time, it is made to be used fully alone.<br>
+Note : it saves files with *text/plain;charset=utf-8*
 
 
 Prerequisite
@@ -23,7 +23,7 @@ You need to edit the script with your key path and your email key (see security 
 
 Security
 --------
-To access your bucket, you must provide a service account key and an email. To do so, look at your *api & auth* section of your console developer (see http://bit.ly/1tprtJc). After that, provide the given file to the script by setting PRIVATTE_KEY_PATH.
+To access your bucket, you must provide a service account key and an email. To do so, look at your *api & auth* section of your console developer (see http://bit.ly/1tprtJc). After that, provide the given file to the script by setting PRIVATE_KEY_PATH.
 
 RUN
 --------
@@ -34,7 +34,6 @@ $ python upload_command.py "pg_dump my_database" gs://bucket/object
 Encrypt content
 --------
 Sometimes you'll want to encrypt your data before storing. It might be a good thing. <br>
-Nothing more easy. You can pipe your command with someting that encrypt your data. For example with aescript (see http://www.aescrypt.com/) you can do that : <br>
+Nothing more easy. You can pipe your command with something that encrypt your data. For example with script (see http://www.aescrypt.com/) you can do that : <br>
 $ python upload_command.py "pg_dump my_database | aescrypt -e -k storage.key - "gs://my-bucket-ch/pgsql/$(date +\%Y-\%m-\%d-\%H\%M).sql.aes
-
 
