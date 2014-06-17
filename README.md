@@ -2,7 +2,7 @@ Google-Cloud-Storage-Upload
 ===========================
 
 Script to upload the result of a command to google cloud storage. Greater for dump backup.
-
+<p align="center"><img src="http://s27.postimg.org/p8rtjh2db/Untitled_1.png"></p>
 
 Purpose
 --------
