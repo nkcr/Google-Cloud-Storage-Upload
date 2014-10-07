@@ -25,8 +25,9 @@ Usage examples:
 # You need to create a service account key
 # see here http://bit.ly/1tprtJc
 # Also provide the email associated with the key
-PRIVATTE_KEY_PATH = 'XXXXXXXXXXXXX'
-EMAIL_KEY = 'XXXXXXXXXXXXX@developer.gserviceaccount.com'
+# Path is relative
+PRIVATTE_KEY_PATH = 'Backups-6b883fdec558.p12'
+EMAIL_KEY = '1067891787564-ms8k3bb85eet1aueb372p6t95dri83ss@developer.gserviceaccount.com'
 
 import httplib2 # handle http stuff
 import os # handle file
@@ -60,7 +61,7 @@ def get_authenticated_service(scope):
   http = httplib2.Http()
   http = credentials.authorize(http)
 
-  return discovery_build('storage', 'v1beta1', http=http)
+  return discovery_build('storage', 'v1', http=http)
 
 
 def upload(argv):
