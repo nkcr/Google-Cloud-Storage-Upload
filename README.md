@@ -16,6 +16,10 @@ Prerequisite
 --------
 The google-api-python library must be installed. See https://github.com/google/google-api-python-client
 
+With ubuntu :
+
+  sudo apt-get install python-pip
+  sudo pip install --upgrade google-api-python-client
 
 Setup
 --------
