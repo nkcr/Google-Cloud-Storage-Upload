@@ -18,8 +18,8 @@ The google-api-python library must be installed. See https://github.com/google/g
 
 With ubuntu :
 
-  sudo apt-get install python-pip
-  sudo pip install --upgrade google-api-python-client
+    sudo apt-get install python-pip
+    sudo pip install --upgrade google-api-python-client
 
 Setup
 --------
