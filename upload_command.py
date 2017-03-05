@@ -22,12 +22,11 @@ Usage examples:
   $ python
 """
 
-# You need to create a service account key
+# You need to create a service account key and download
+# the key in json format.
 # see here http://bit.ly/1tprtJc
-# Also provide the email associated with the key
 # Path is relative
-PRIVATTE_KEY_PATH = 'Backups-6b883fdec558.p12'
-EMAIL_KEY = '1067891787564-ms8k3bb85eet1aueb372p6t95dri83ss@developer.gserviceaccount.com'
+PRIVATE_KEY_PATH = '/path/to/key/xxxx.json'
 
 import httplib2 # handle http stuff
 import os # handle file
@@ -36,7 +35,7 @@ import io # for plain text upload (nkcr)
 import json # to display the result (nkcr)
 import subprocess # to make pg_dump or whatever unix command
 from apiclient.discovery import build as discovery_build
-from oauth2client.client import SignedJwtAssertionCredentials
+from oauth2client.service_account import ServiceAccountCredentials
 # for key auth (nkcr)
 from apiclient.http import MediaIoBaseUpload
 
@@ -44,20 +43,17 @@ RW_SCOPE = 'https://www.googleapis.com/auth/devstorage.read_write'
 
 def get_authenticated_service(scope):
   print 'Authenticating...' 
-
-  f = file(os.path.abspath(os.path.join(os.path.dirname(__file__),
-                                   PRIVATTE_KEY_PATH)), 'rb')
-  key = f.read()
-  f.close()
+  scopes = ["https://www.googleapis.com/auth/devstorage.read_write"]
+  credentials = ServiceAccountCredentials.from_json_keyfile_name(PRIVATE_KEY_PATH, scopes)
 
   # Create an httplib2.Http object to handle our HTTP requests and authorize it
   # with the Credentials. Note that the first parameter, service_account_name,
   # is the Email address created for the Service account. It must be the email
   # address associated with the key that was created.
-  credentials = SignedJwtAssertionCredentials(
-      EMAIL_KEY,
-      key,
-      scope=scope)
+  #credentials = SignedJwtAssertionCredentials(
+  #    EMAIL_KEY,
+  #    key,
+  #    scope=scope)
   http = httplib2.Http()
   http = credentials.authorize(http)
 
