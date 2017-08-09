@@ -24,7 +24,7 @@ With ubuntu :
 Setup
 --------
 If not already done, create a project in your console developer (https://console.developers.google.com) and create a new bucket in the cloud storage area (you may before need to activate google cloud storage api).<br>
-You need to edit the script with your key path and your email key (see security section). <br>
+You need to edit the script with your service account key path (see security section). <br>
 
 Security
 --------
