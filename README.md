@@ -41,4 +41,3 @@ Encrypt content
 Sometimes you'll want to encrypt your data before storing. It might be a good thing. <br>
 Nothing more easy. You can pipe your command with something that encrypt your data. For example with aescript (see http://www.aescrypt.com/) you can do that : <br>
 $ python upload_command.py "pg_dump my_database | aescrypt -e -k storage.key - "gs://my-bucket-ch/pgsql/$(date +\%Y-\%m-\%d-\%H\%M).sql.aes
-
