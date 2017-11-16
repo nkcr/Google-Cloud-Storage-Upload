@@ -2,7 +2,9 @@ Google-Cloud-Storage-Upload
 ===========================
 
 Script to upload the result of a command to google cloud storage. Great for dump backup.  
-**Check my [other repo](https://github.com/nkcr/Google-Cloud-Storage-Metric) to monitor cloud storage on new relic !**
+
+**Newer version written in *go* in my [other repo](https://github.com/nkcr/Google-Storage-stdin-Upload)**.
+
 <p align="center"><img src="http://s27.postimg.org/p8rtjh2db/Untitled_1.png"></p>
 
 Purpose
